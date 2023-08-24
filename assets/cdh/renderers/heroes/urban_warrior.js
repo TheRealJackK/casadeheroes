@@ -2,7 +2,6 @@ extend("fiskheroes:hero_basic");
 loadTextures({
     "layer1": "cdh:urban_warrior_layer1",
     "layer2": "cdh:urban_warrior_layer2",
-    "quiver": "fiskheroes:quiver/green_arrow",
     "gun": "fiskheroes:deathstroke_dceu_gun",
     "ammo_bag": "fiskheroes:deathstroke_dceu_ammo_bag",
     "web_wings": "cdh:urban_warrior_wings"
@@ -15,7 +14,6 @@ function init(renderer) {
 }
 
 function initEffects(renderer) {
-    utils.addLivery(renderer, "QUIVER", "quiver");
 
     web_wings = renderer.createEffect("fiskheroes:wingsuit");
     web_wings.texture.set("web_wings");

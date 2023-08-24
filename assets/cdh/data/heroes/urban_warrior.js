@@ -7,8 +7,6 @@ function init(hero) {
     hero.setLeggings("Tactical Pants");
     hero.setBoots("Tactical Boots");
     hero.addPrimaryEquipment("fiskheroes:grappling_gun", true);
-    hero.addEquipment("fiskheroes:compound_bow");
-    hero.addEquipment("fiskheroes:quiver");
 
     hero.addPowers("cdh:urban_combat");
     hero.addAttribute("PUNCH_DAMAGE", 6.0, 0);

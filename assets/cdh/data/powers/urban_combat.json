@@ -1,8 +1,6 @@
 {
     "name": "Urban Combat",
     "modifiers": {
-        "fiskheroes:archery": {
-        },
         "fiskheroes:equipment": {
             "equipment": {
               "fiskheroes:grenade": {
@@ -14,6 +12,7 @@
                     "EXPLOSION": 1.0
                   }
                 },
+                "canBreakGlass": true,
                 "isInstant": false,
                 "affectsUser": true,
                 "fuseTime": 40,
