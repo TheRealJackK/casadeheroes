@@ -5,7 +5,7 @@
         "damageProfile": {
           "damage": 7.0,
           "types": {
-            "BULLET": 1.0
+            "ENERGY": 1.0
           }
         },
         "chargeTime": 20,

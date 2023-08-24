@@ -1,6 +1,6 @@
 function init(hero) {
     hero.setName("CamMan");
-    hero.setTier(6);
+    hero.setTier(5);
 
     hero.setHelmet("item.superhero_armor.piece.cowl");
     hero.setChestplate("item.superhero_armor.piece.chestpiece");
@@ -8,10 +8,10 @@ function init(hero) {
     hero.setBoots("item.superhero_armor.piece.boots");
 
     hero.addPowers("cdh:cam_suit");
-    hero.addAttribute("PUNCH_DAMAGE", 6.5, 0);
+    hero.addAttribute("PUNCH_DAMAGE", 4, 0);
     hero.addAttribute("WEAPON_DAMAGE", 3.5, 0);
     hero.addAttribute("JUMP_HEIGHT", 1.0, 0);
-    hero.addAttribute("FALL_RESISTANCE", 6.0, 0);
+    hero.addAttribute("FALL_RESISTANCE", 10.0, 0);
     hero.addAttribute("SPRINT_SPEED", 0.2, 1);
     hero.addAttribute("IMPACT_DAMAGE", 0.5, 1);
 

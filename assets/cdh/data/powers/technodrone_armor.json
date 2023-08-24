@@ -21,7 +21,7 @@
           "dealDamage": true
         }
       },
-      "knockback": 0.4,
+      "knockback": 0.2,
       "soundEvents": {
         "ENABLE": ["fiskheroes:iron_man_flight_enable", "fiskheroes:iron_man_flight_loop"],
         "BOOST": "fiskheroes:iron_man_boost",
@@ -33,7 +33,7 @@
     },
     "fiskheroes:repulsor_blast": {
       "damageProfile": {
-        "damage": 4.0,
+        "damage": 6.0,
         "types": {
           "ENERGY": 1.0
         },
@@ -51,6 +51,12 @@
         "SHOOT": "fiskheroes:repulsor_blast"
       }
     },
+    "fiskheroes:blade": {
+      "soundEvents": {
+        "ENABLE": "fiskheroes:agent_liberty_blade_enable",
+        "DISABLE": "fiskheroes:agent_liberty_blade_disable"
+      }
+    },
     "fiskheroes:sentry_mode": {
       "soundEvents": {
         "OPEN": "fiskheroes:sentry_mode_open",
@@ -66,7 +72,7 @@
     "fiskheroes:metal_skin": {
     },
     "fiskheroes:regeneration": {
-      "factor": 1
+      "factor": 2
     },
     "fiskheroes:potion_immunity": {
       "potionEffects": ["minecraft:nausea", "minecraft:poison", "minecraft:wither"]

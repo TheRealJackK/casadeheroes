@@ -2,7 +2,11 @@ extend("fiskheroes:hero_basic");
 loadTextures({
     "layer1": "cdh:camman_layer1",
     "layer2": "cdh:camman_layer2",
-    "cape": "cdh:camman_cape"
+    "cape": "cdh:camman_cape",
+    "web_small": "cdh:web/camman_web",
+	"web_large": "cdh:web/camman_web_24",
+	"web_rope": "cdh:web/camman_web_rope",
+	"web_rope_base": "cdh:web/camman_web"
 });
 
 var capes = implement("fiskheroes:external/capes");
@@ -11,6 +15,12 @@ var utils = implement("fiskheroes:external/utils");
 var cape;
 
 function initEffects(renderer) {
+    var webs = renderer.bindProperty("fiskheroes:webs");
+	webs.textureSmall.set("web_small");
+	webs.textureLarge.set("web_large");
+	webs.textureRope.set("web_rope");
+	webs.textureRopeBase.set("web_rope_base");
+
     var physics = renderer.createResource("CAPE_PHYSICS", null);
     physics.maxFlare = 0.4;
     physics.flareDegree = 1.5;

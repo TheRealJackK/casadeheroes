@@ -10,12 +10,18 @@ function init(hero) {
     hero.setBoots("Boots");
 
     hero.addPowers("cdh:technodrone_armor");
-    hero.addAttribute("PUNCH_DAMAGE", 8.0, 0);
+    hero.addAttribute("PUNCH_DAMAGE", 5.0, 0);
     hero.addAttribute("WEAPON_DAMAGE", 1.0, 0);
     hero.addAttribute("FALL_RESISTANCE", 8.0, 0);
 
     hero.addKeyBind("AIM", "key.aim", 1);
+    hero.addKeyBind("BLADE", "key.blade", 2);
     hero.addKeyBind("SENTRY_MODE", "key.sentryMode", 3);
+
+    hero.addAttributeProfile("BLADE", bladeProfile);
+    hero.setAttributeProfile(getProfile);
+    hero.setDamageProfile(getProfile);
+    hero.addDamageProfile("BLADE", {"types": {"SHARP": 1.0}});
 
     hero.setModifierEnabled(isModifierEnabled);
     hero.setKeyBindEnabled(isKeyBindEnabled);
@@ -64,4 +70,13 @@ function hasProperty(entity, property) {
 
 function canAim(entity) {
     return entity.getHeldItem().isEmpty();
+}
+
+function bladeProfile(profile) {
+    profile.inheritDefaults();
+    profile.addAttribute("PUNCH_DAMAGE", 7.0, 0);
+}
+
+function getProfile(entity) {
+    return entity.getData("fiskheroes:blade") ? "BLADE" : null;
 }

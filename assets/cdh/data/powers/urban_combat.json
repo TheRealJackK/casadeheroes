@@ -24,6 +24,32 @@
               "SWITCH": "fiskheroes:utility_belt_switch"
             }
         },
+        "fiskheroes:gliding": {
+          "gliding": {
+            "speed": 1.3,
+            "lift": 1.5,
+            "gravity": 1.25,
+            "stall": 1.0
+          },
+          "isPowered": false,
+          "isControlled": false,
+          "canJumpActivate": false,
+          "collision": {
+            "blocks": {
+              "stopFlying": true,
+              "takeDamage": true
+            },
+            "entities": {
+              "stopFlying": true,
+              "dealDamage": true
+            }
+          },
+          "knockback": 0.75,
+          "soundEvents": {
+            "ENABLE": ["fiskheroes:web_wings_open", "fiskheroes:gliding"],
+            "DISABLE": "fiskheroes:web_wings_close"
+          }
+        },
         "fiskheroes:fire_immunity": {
         },
         "fiskheroes:damage_resistance": {

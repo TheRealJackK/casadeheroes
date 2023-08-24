@@ -8,7 +8,8 @@ function init(hero) {
     hero.setBoots("Boots");
 
     hero.addPowers("cdh:ambush_powers");
-    hero.addAttribute("PUNCH_DAMAGE", 6.0, 0);
+    hero.addAttribute("PUNCH_DAMAGE", 6.5, 0);
+    hero.addAttribute("JUMP_HEIGHT", 3.0, 0);
     hero.addAttribute("FALL_RESISTANCE", 4.0, 0);
 
     hero.addKeyBind("EARTHQUAKE", "key.earthquake", 1);

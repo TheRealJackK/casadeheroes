@@ -18,6 +18,12 @@
         "DISABLE": "fiskheroes:slow_motion_disable_cw"
       }
     },
+    "fiskheroes:blade": {
+      "soundEvents": {
+        "ENABLE": "fiskheroes:mk50_blade_enable",
+        "DISABLE": "fiskheroes:mk50_blade_disable"
+      }
+    },
     "fiskheroes:arrow_catching": {
     },
     "fiskheroes:regeneration": {

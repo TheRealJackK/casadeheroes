@@ -19,6 +19,12 @@ function init(hero) {
 
     hero.addKeyBind("SUPER_SPEED", "key.superSpeed", 1);
     hero.addKeyBind("SLOW_MOTION", "key.slowMotion", 2);
+    hero.addKeyBind("BLADE", "key.blade", 3);
+
+    hero.addAttributeProfile("BLADE", bladeProfile);
+    hero.setAttributeProfile(getProfile);
+    hero.setDamageProfile(getProfile);
+    hero.addDamageProfile("BLADE", {"types": {"SHARP": 1.0}});
 
     hero.setHasProperty((entity, property) => property == "MASK_TOGGLE");
 
@@ -31,4 +37,13 @@ function init(hero) {
     hero.setTickHandler((entity, manager) => {
         speedster_base.tick(entity, manager);
     });
+}
+
+function bladeProfile(profile) {
+    profile.inheritDefaults();
+    profile.addAttribute("PUNCH_DAMAGE", 8.0, 0);
+}
+
+function getProfile(entity) {
+    return entity.getData("fiskheroes:blade") ? "BLADE" : null;
 }
