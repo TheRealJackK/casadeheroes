@@ -6,7 +6,6 @@ function init(hero) {
     hero.setChestplate("Plate Carrier");
     hero.setLeggings("Tactical Pants");
     hero.setBoots("Tactical Boots");
-    hero.addPrimaryEquipment("fiskheroes:grappling_gun", true);
 
     hero.addPowers("cdh:urban_combat");
     hero.addAttribute("PUNCH_DAMAGE", 6.0, 0);
@@ -17,8 +16,7 @@ function init(hero) {
     hero.addAttribute("BOW_DRAWBACK", 1.0, 1.5);
 
     hero.addKeyBind("AIM", "key.aim", -1);
-    hero.addKeyBind("GUN_RELOAD", "key.reload", 3);
-    hero.addKeyBind("HORIZONTAL_BOW", "key.horizontalBow", 1);
+    hero.addKeyBind("GUN_RELOAD", "key.reload", 1);
     hero.addKeyBind("UTILITY_BELT", "key.grenades", 2);
     hero.addKeyBindFunc("func_WEB_WINGS", webWingsKey, "key.webWings", 5);
     
