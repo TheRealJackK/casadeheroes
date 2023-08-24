@@ -1,0 +1,6 @@
+{
+    "suit": "cdh:camman",
+    "requirements": [
+        "cdh:casadeheroesnode"
+    ]
+}

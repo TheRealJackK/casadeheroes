@@ -1,0 +1,6 @@
+{
+    "suit": "cdh:chadx",
+    "requirements": [
+        "cdh:casadeheroesnode"
+    ]
+}

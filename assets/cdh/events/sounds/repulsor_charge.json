@@ -1,0 +1,6 @@
+{
+  "parent": "fiskheroes:sound_base",
+  "sound": "fiskheroes:modifier.repulsor.charge",
+  "condition": "fiskheroes:aiming",
+  "fadeOut": 5
+}

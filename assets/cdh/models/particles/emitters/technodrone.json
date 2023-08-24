@@ -1,0 +1,54 @@
+{
+  "particles": [
+    {
+      "condition": "!firstPerson && entity.getData('fiskheroes:dyn/booster_r_timer') > 0",
+      "type": "SMOKE",
+      "anchor": "rightArm",
+      "amount": 2,
+      "offset": [ 1.0, 10.0, 0.0 ],
+      "motion": [ 0.0, -0.25, 0.0 ],
+      "randMotion": [ -0.025, 0.0, 0.025 ]
+    },
+    {
+      "condition": "!firstPerson && entity.getData('fiskheroes:dyn/booster_l_timer') > 0",
+      "type": "SMOKE",
+      "anchor": "leftArm",
+      "amount": 2,
+      "offset": [ -1.0, 10.0, 0.0 ],
+      "motion": [ 0.0, -0.25, 0.0 ],
+      "randMotion": [ 0.025, 0.0, 0.025 ]
+    },
+    {
+      "condition": "!firstPerson && entity.getData('fiskheroes:dyn/booster_timer') > 0 && entity.getData('fiskheroes:suit_open_timer') == 0",
+      "type": "SMOKE_SMALL",
+      "anchor": "body",
+      "amount": 2,
+      "offset": [ 2.7, 5.0, 2.5 ],
+      "motion": [ 0.0, -0.075, 0.0 ],
+      "mirror": true
+    },
+    {
+      "type": "SMOKE",
+      "anchor": "rightLeg",
+      "amount": 2,
+      "offset": {
+        "tp": [ 0.0, 12.0, 0.0 ],
+        "fp": [ 3.0, 24.0, 0.0 ]
+      },
+      "motion": [ 0.0, -0.25, 0.0 ],
+      "randMotion": [ 0.0125, 0.0, 0.025 ],
+      "mirror": true,
+      "lockFPYaw": true
+    },
+    {
+      "maxDistance": 256,
+      "condition": "!firstPerson && entity.isSprinting()",
+      "type": "minecraft:largesmoke",
+      "anchor": "rightLeg",
+      "amount": 2,
+      "offset": [ -2.0, 12.0, 0.0 ],
+      "motion": [ 0.0, -0.25, 0.0 ],
+      "randMotion": [ 0.05, 0.0, 0.05 ]
+    }
+  ]
+}

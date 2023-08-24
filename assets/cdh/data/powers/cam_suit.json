@@ -1,0 +1,88 @@
+{
+    "name": "Cam Suit",
+    "modifiers": {
+        "fiskheroes:web_swinging": {
+            "cooldownTime": 5,
+            "soundEvents": {
+              "ENABLE": "fiskheroes:web_swinging_enable",
+              "DISABLE": "fiskheroes:web_swinging_disable",
+              "SHOOT": "fiskheroes:web_shoot",
+              "RELEASE": ["fiskheroes:web_swinging_whoosh", "fiskheroes:web_swinging_fall_loop"],
+              "SWING": ["fiskheroes:web_swinging", "fiskheroes:web_stress_loop"],
+              "IMPACT": "fiskheroes:flight_impact_entity"
+            }
+          },
+          "fiskheroes:web_zip": {
+            "range": 50.0,
+            "cooldownTime": 20,
+            "soundEvents": {
+              "SHOOT": "fiskheroes:web_zip"
+            }
+          },
+      "fiskheroes:equipment": {
+        "equipment": {
+          "fiskheroes:batarang": {
+            "cooldown": 13,
+            "uses": 3,
+            "damageProfile": {
+              "damage": 8.0,
+              "types": {
+                "SHURIKEN": 1.0
+              },
+              "properties": {
+                "DAMAGE_DROPOFF": 0.6,
+                "HIT_COOLDOWN": 0
+              }
+            }
+          },
+          "fiskheroes:freeze_grenade": {
+            "cooldown": 400,
+            "uses": 1,
+            "damageProfile": {
+              "damage": 16.0,
+              "types": {
+                "COLD": 0.5,
+                "EXPLOSION": 0.6
+              }
+            }
+          },
+          "fiskheroes:smoke_pellet": {
+            "cooldown": 200,
+            "uses": 2
+          }
+        },
+        "soundEvents": {
+          "SWITCH": "fiskheroes:utility_belt_switch"
+        }
+      },
+      "fiskheroes:gliding": {
+        "gliding": {
+          "speed": 1.0,
+          "lift": 1.0,
+          "gravity": 1.0,
+          "stall": 0.0
+        },
+        "isPowered": false,
+        "isControlled": false,
+        "canJumpActivate": true,
+        "collision": {
+          "blocks": {
+            "stopFlying": true,
+            "takeDamage": true
+          },
+          "entities": {
+            "stopFlying": true,
+            "dealDamage": true
+          }
+        },
+        "knockback": 0.75,
+        "soundEvents": {
+          "ENABLE": ["fiskheroes:cape_open", "fiskheroes:gliding"],
+          "DISABLE": ["fiskheroes:cape_close"]
+        }
+      },
+      "fiskheroes:damage_immunity": {
+        "damageType": "BULLET"
+      }
+    }
+  }

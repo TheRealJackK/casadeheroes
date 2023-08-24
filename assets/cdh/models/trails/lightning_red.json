@@ -1,0 +1,10 @@
+{
+  "parent": "fiskheroes:lightning_base",
+  "constants": {
+    "COLOR": "0xFF0000"
+  },
+  "flicker": {
+	"color": "0xFF0000",
+    "confined": true
+  }
+}

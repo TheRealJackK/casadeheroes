@@ -1,0 +1,6 @@
+{
+    "suit": "cdh:technodrone",
+    "requirements": [
+        "cdh:casadeheroesnode"
+    ]
+}

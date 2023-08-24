@@ -1,0 +1,12 @@
+{
+    "display": {
+        "name": {
+            "translate": "Casa de Heroes"
+        },
+        "icon": {
+            "texture": "cdh:textures/gui/nodes/heropack.png"
+        }
+    },
+    "requirements": [],
+    "price": {}
+}

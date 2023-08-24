@@ -1,0 +1,7 @@
+{
+    "suit": "cdh:ambush",
+    "requirements": [
+        "cdh:casadeheroesnode"
+    ]
+        
+}

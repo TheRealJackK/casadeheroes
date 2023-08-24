@@ -1,0 +1,34 @@
+{
+    "name": "Urban Combat",
+    "modifiers": {
+        "fiskheroes:archery": {
+        },
+        "fiskheroes:equipment": {
+            "equipment": {
+              "fiskheroes:grenade": {
+                "cooldown": 200,
+                "uses": 3,
+                "damageProfile": {
+                  "damage": 30.0,
+                  "types": {
+                    "EXPLOSION": 1.0
+                  }
+                },
+                "isInstant": false,
+                "affectsUser": true,
+                "fuseTime": 40,
+                "radius": 8.0
+              }
+            },
+            "soundEvents": {
+              "SWITCH": "fiskheroes:utility_belt_switch"
+            }
+        },
+        "fiskheroes:fire_immunity": {
+        },
+        "fiskheroes:damage_resistance": {
+          "damageType": "BULLET",
+          "factor": 0.5
+        }
+    }
+}

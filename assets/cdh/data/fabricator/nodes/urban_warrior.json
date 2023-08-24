@@ -1,0 +1,6 @@
+{
+    "suit": "cdh:urban_warrior",
+    "requirements": [
+        "cdh:casadeheroesnode"
+    ]
+}

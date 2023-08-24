@@ -1,0 +1,7 @@
+{
+  "parent": "fiskheroes:sound_base",
+  "sound": "fiskheroes:modifier.repulsor.powerdown",
+  "condition": "!entity.getData('fiskheroes:aiming')",
+  "volume": 0.8,
+  "fadeOut": 5
+}

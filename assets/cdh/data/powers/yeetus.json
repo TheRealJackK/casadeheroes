@@ -1,0 +1,71 @@
+{
+    "name": "Yeetus Powers",
+    "modifiers": {
+        "fiskheroes:cooldown": {
+            "cooldown": {
+              "toggleData": "fiskheroes:intangible",
+              "cooldownData": "fiskheroes:dyn/intangibility_cooldown",
+              "duration": 300,
+              "recovery": 1.0
+            }
+          },
+          "fiskheroes:intangibility": {
+            "isAbsolute": true,
+            "soundEvents": {
+              "ENABLE": "fiskheroes:vision_intang_on",
+              "DISABLE": "fiskheroes:vision_intang_off"
+            }
+          },
+          "fiskheroes:controlled_flight": {
+            "speed": 0.1,
+            "boostSpeed": 0.18,
+            "canBoost": true,
+            "collision": {
+              "blocks": {
+                "stopFlying": false,
+                "takeDamage": false
+              },
+              "entities": {
+                "stopFlying": false,
+                "dealDamage": true
+              }
+            },
+            "knockback": 0.4,
+            "soundEvents": {
+              "ENABLE": ["fiskheroes:flight_loop", "fiskheroes:flight_cape_loop"],
+              "BOOST": "fiskheroes:flight_boost",
+              "IMPACT_ENTITY": "fiskheroes:flight_impact_entity"
+            }
+          },
+          "fiskheroes:sonic_waves": {
+            "damageProfile": {
+              "damage": 7.0,
+              "types": {
+                "SOUND": 1.0
+              }
+            },
+            "knockback": 0.025,
+            "canBreakGlass": true
+          },
+          "fiskheroes:telekinesis": {
+            "telekinesis": {
+              "crushMelons": false,
+              "crushThrowables": false,
+              "squeezeChickens": false,
+              "explodeCreepers": false,
+              "destroyInanimates": false
+            },
+            "canGrab": {
+              "mobs": true,
+              "items": true,
+              "projectiles": false,
+              "inanimates": false
+            },
+            "range": 10.0,
+            "soundEvents": {
+              "GRAB": ["fiskheroes:shadowchain_loop", "fiskheroes:shadowchain_start"],
+              "RELEASE": "fiskheroes:shadowchain_release"
+            }
+          }
+    }
+}

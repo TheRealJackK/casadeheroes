@@ -1,0 +1,16 @@
+{
+  "texture": {
+    "in": "cdh:technodrone_lights_layer1",
+    "transform": [
+      {
+        "operation": "STITCH",
+        "supply": "fiskheroes:mk46_helmet"
+      },
+      {
+        "operation": "XOR",
+        "supply": "fiskheroes:xor/iron_man_helmet"
+      }
+    ],
+    "out": "cdh:generated/technodrone_helmet_lights"
+  }
+}

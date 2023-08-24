@@ -1,0 +1,36 @@
+{
+  "name": "Ambush Powers",
+  "modifiers": {
+    "fiskheroes:earthquake": {
+      "damageProfile": {
+        "damage": 1.0,
+        "types": {
+          "EXPLOSION": 1.0
+        }
+      },
+      "radius": 20.0,
+      "knockback": 1.0,
+      "duration": 100,
+      "cooldownTime": 160
+    },
+    "fiskheroes:ground_smash": {
+      "damageProfile": {
+        "damage": 15.0,
+        "types": {
+          "EXPLOSION": 1.0
+        }
+      },
+      "radius": 3.0,
+      "knockback": 3.0,
+      "cooldownTime": 40,
+      "canDoGriefing": true
+    },
+    "fiskheroes:teleportation": {
+        "canReachMoon": false,
+        "range": 128.0,
+        "soundEvents": {
+          "TELEPORT": "fiskheroes:breach"
+        }
+    }
+  }
+}
