@@ -17,12 +17,12 @@ function init(hero) {
 
     hero.addKeyBind("AIM", "key.aim", -1);
     hero.addKeyBind("GUN_RELOAD", "key.reload", 1);
-    hero.addKeyBind("UTILITY_BELT", "key.grenades", 2);
+    hero.addKeyBind("WEB_ZIP", "key.webZip", 2);
+    hero.addKeyBind("UTILITY_BELT", "key.grenades", 3);
     hero.addKeyBindFunc("func_WEB_WINGS", webWingsKey, "key.webWings", 5);
     
     hero.setKeyBindEnabled(isKeyBindEnabled);
     hero.setHasPermission((entity, permission) => permission == "USE_GUN");
-    hero.setHasPermission((entity, permission) => permission == "USE_GRAPPLING_GUN");
     hero.supplyFunction("canAim", entity => entity.getHeldItem().isGun());
 
     function isKeyBindEnabled(entity, keyBind) {
