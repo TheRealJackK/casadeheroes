@@ -72,7 +72,7 @@
     "fiskheroes:metal_skin": {
     },
     "fiskheroes:regeneration": {
-      "factor": 2
+      "factor": 1.0
     },
     "fiskheroes:potion_immunity": {
       "potionEffects": ["minecraft:nausea", "minecraft:poison", "minecraft:wither"]
