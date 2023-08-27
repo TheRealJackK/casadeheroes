@@ -8,5 +8,4 @@ loadTextures({
     "suit": "cdh:technodrone_suit.tx.json",
     "mask": "cdh:technodrone_helmet.tx.json",
     "mask_lights": "cdh:technodrone_helmet_lights.tx.json",
-    "blade": "cdh:technodrone_blade"
 });

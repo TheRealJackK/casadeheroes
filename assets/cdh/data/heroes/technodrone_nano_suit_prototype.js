@@ -1,12 +1,12 @@
 var landing = implement("fiskheroes:external/superhero_landing");
 
 function init(hero) {
-    hero.setName("Technodrone Model 2");
+    hero.setName("Technodrone Nano Suit Prototype");
     hero.setTier(8);
 
     hero.setChestplate("Suit Housing");
 
-    hero.addPowers("cdh:technodrone_nano_armor");
+    hero.addPowers("cdh:technodrone_nano_armor_prototype");
     hero.addAttribute("PUNCH_DAMAGE", 8.5, 0);
     hero.addAttribute("WEAPON_DAMAGE", 1.5, 0);
     hero.addAttribute("SPRINT_SPEED", 0.1, 1);
@@ -15,7 +15,7 @@ function init(hero) {
 
     hero.addKeyBind("AIM", "key.crabCannon", 1);
     hero.addKeyBind("BLADE", "key.blade", 2);
-    hero.addKeyBind("SHIELD", "key.forcefield", 4);
+    hero.addKeyBind("SHIELD", "key.forcefield", 3);
     hero.addKeyBind("NANITE_TRANSFORM", "key.naniteTransform", 5);
 
     hero.setModifierEnabled(isModifierEnabled);
@@ -24,6 +24,7 @@ function init(hero) {
     hero.setTierOverride(getTierOverride);
     hero.supplyFunction("canAim", canAim);
 
+    hero.addAttributeProfile("SHIELD", shieldProfile);
     hero.addAttributeProfile("INACTIVE", inactiveProfile);
     hero.addAttributeProfile("BLADE", bladeProfile);
     hero.setAttributeProfile(getProfile);
@@ -51,6 +52,16 @@ function init(hero) {
 
         landing.tick(entity, manager);
     });
+}
+
+function shieldProfile(profile) {
+    profile.inheritDefaults();
+    profile.addAttribute("BASE_SPEED", -0.75, 1);
+    profile.addAttribute("JUMP_HEIGHT", -2.0, 1);
+}
+
+function getAttributeProfile(entity) {
+    return entity.getData("fiskheroes:shield_blocking") ? "SHIELD" : null;
 }
 
 function getTierOverride(entity) {

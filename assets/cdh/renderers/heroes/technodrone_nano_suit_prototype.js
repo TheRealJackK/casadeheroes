@@ -1,10 +1,10 @@
 extend("fiskheroes:hero_basic");
 loadTextures({
-    "base": "cdh:technodrone_nano/technodrone_nano_suit",
-    "suit": "cdh:technodrone_nano/technodrone_nano_suit.tx.json",
-    "mask": "cdh:technodrone_nano/technodrone_nano_mask.tx.json",
-    "mask_lights": "cdh:technodrone_nano/technodrone_nano_suit_mask_lights",
-    "lights": "cdh:technodrone_nano/technodrone_nano_suit_mask_lights",
+    "base": "cdh:technodrone_nano/prototype/technodrone_nano_suit_prototype",
+    "suit": "cdh:technodrone_nano/prototype/technodrone_nano_suit_prototype.tx.json",
+    "mask": "cdh:technodrone_nano/prototype/technodrone_nano_mask_prototype.tx.json",
+    "mask_lights": "cdh:technodrone_nano/prototype/technodrone_nano_suit_mask_prototype_lights",
+    "lights": "cdh:technodrone_nano/prototype/technodrone_nano_suit_prototype_lights",
     "reactor": "cdh:technodrone_nano/technodrone_nano_reactor",
     "reactor_lights": "cdh:technodrone_nano/technodrone_nano_reactor_lights",
     "blade": "cdh:technodrone_nano/technodrone_nano_blade",
@@ -61,6 +61,14 @@ function initEffects(renderer) {
     blade.anchor.set("rightArm");
     blade.setOffset(1.5, 8.0, 0.0);
     blade.large = true;
+
+    var forcefield = renderer.bindProperty("fiskheroes:forcefield");
+    forcefield.color.set(0xDC4153);
+    forcefield.setShape(36, 18).setOffset(0.0, 6.0, 0.0).setScale(1.25);
+    forcefield.setCondition(entity => {
+        forcefield.opacity = entity.getInterpolatedData("fiskheroes:shield_blocking_timer") * 0.15;
+        return true;
+    });
 
     cannon = mk50_cannon.create(renderer, "rightArm", 0xDC4153);
     boosters = iron_man_boosters.create(renderer, "fiskheroes:repulsor_layer_%s", true);

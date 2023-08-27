@@ -17,7 +17,7 @@
         "cooldown": {
           "toggleData": "fiskheroes:dyn/nanites",
           "cooldownData": "fiskheroes:dyn/nanite_cooldown",
-          "duration": 6000,
+          "duration": 9000,
           "recovery": 3.0
         },
         "soundEvents": {
@@ -56,7 +56,7 @@
       },
       "fiskheroes:energy_bolt": {
         "damageProfile": {
-          "damage": 10.5,
+          "damage": 9,
           "types": {
             "ENERGY": 1.0
           }
@@ -71,6 +71,27 @@
         "soundEvents": {
           "ENABLE": "fiskheroes:mk50_blade_enable",
           "DISABLE": "fiskheroes:mk50_blade_disable"
+        }
+      },
+      "fiskheroes:shield": {
+        "shield": {
+          "health": 100.0,
+          "regeneration": 10.0,
+          "recoveryDelay": 100,
+          "cooldown": 200
+        },
+        "coverage": {
+          "yawRadius": 180.0,
+          "pitchRadius": 180.0,
+          "yawOffset": 0.0,
+          "pitchOffset": 0.0
+        },
+        "knockback": 1.0,
+        "isToggle": false,
+        "soundEvents": {
+          "BLOCK_START": "fiskheroes:anti_forcefield",
+          "DEFLECT": "fiskheroes:anti_forcefield_deflect",
+          "DISARM": "fiskheroes:shield_disarm"
         }
       },
       "fiskheroes:fire_immunity": {

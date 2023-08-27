@@ -51,12 +51,6 @@
         "SHOOT": "fiskheroes:repulsor_blast"
       }
     },
-    "fiskheroes:blade": {
-      "soundEvents": {
-        "ENABLE": "fiskheroes:agent_liberty_blade_enable",
-        "DISABLE": "fiskheroes:agent_liberty_blade_disable"
-      }
-    },
     "fiskheroes:sentry_mode": {
       "soundEvents": {
         "OPEN": "fiskheroes:sentry_mode_open",
