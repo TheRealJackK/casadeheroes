@@ -1,12 +1,12 @@
 var landing = implement("fiskheroes:external/superhero_landing");
 
 function init(hero) {
-    hero.setName("Technodrone Nano Suit Prototype");
+    hero.setName("Technodrone Nano Suit");
     hero.setTier(8);
 
     hero.setChestplate("Suit Housing");
 
-    hero.addPowers("cdh:technodrone_nano_armor_prototype");
+    hero.addPowers("cdh:technodrone_nano_armor");
     hero.addAttribute("PUNCH_DAMAGE", 8.5, 0);
     hero.addAttribute("WEAPON_DAMAGE", 1.5, 0);
     hero.addAttribute("SPRINT_SPEED", 0.1, 1);

@@ -1,10 +1,10 @@
 extend("fiskheroes:hero_basic");
 loadTextures({
-    "base": "cdh:technodrone_nano/prototype/technodrone_nano_suit_prototype",
-    "suit": "cdh:technodrone_nano/prototype/technodrone_nano_suit_prototype.tx.json",
-    "mask": "cdh:technodrone_nano/prototype/technodrone_nano_mask_prototype.tx.json",
-    "mask_lights": "cdh:technodrone_nano/prototype/technodrone_nano_suit_mask_prototype_lights",
-    "lights": "cdh:technodrone_nano/prototype/technodrone_nano_suit_prototype_lights",
+    "base": "cdh:technodrone_nano/technodrone_nano_suit",
+    "suit": "cdh:technodrone_nano/technodrone_nano_suit.tx.json",
+    "mask": "cdh:technodrone_nano/technodrone_nano_mask.tx.json",
+    "mask_lights": "cdh:technodrone_nano/technodrone_nano_suit_mask_lights",
+    "lights": "cdh:technodrone_nano/technodrone_nano_suit_lights",
     "reactor": "cdh:technodrone_nano/technodrone_nano_reactor",
     "reactor_lights": "cdh:technodrone_nano/technodrone_nano_reactor_lights",
     "blade": "cdh:technodrone_nano/technodrone_nano_blade",
