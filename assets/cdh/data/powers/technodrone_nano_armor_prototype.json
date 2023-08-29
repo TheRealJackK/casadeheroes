@@ -54,6 +54,62 @@
           "DIVE": ["fiskheroes:flight_dive_loop", "fiskheroes:iron_man_flight_dive"]
         }
       },
+      "fiskheroes:tentacles": {
+        "tentacles": [
+          [0.7, 0, 0.4],
+          [-0.7, 0, 0.4],
+          [0.65, -0.9, 0.3],
+          [-0.65, -0.9, 0.3]
+        ],
+        "climbing": {
+          "speed": 0.1,
+          "range": 5,
+          "tolerance": 7,
+          "minAnchorPoints": 2,
+          "anchorPointZones": [
+            ["TOP", "RIGHT", "FRONT"],
+            ["TOP", "LEFT", "FRONT"],
+            ["BOTTOM", "RIGHT", "BACK"],
+            ["BOTTOM", "LEFT", "BACK"]
+          ]
+        },
+        "range": 8.0,
+        "damageProfile": {
+          "damage": 8.0,
+          "types": {
+            "SHARP": 0.5,
+            "BLUNT": 0.5
+          },
+          "properties": {
+            "DAMAGE_DROPOFF": 0.6,
+            "HIT_COOLDOWN": 0
+          }
+        },
+        "tentacleStrike": {
+          "chargeTime": 20,
+          "damageProfile": {
+            "damage": 17.0,
+            "types": {
+              "SHARP": 1.0
+            },
+            "properties": {
+              "HIT_COOLDOWN": 0
+            }
+          }
+        },
+        "canBreakGlass": true,
+        "soundEvents": {
+          "ENABLE": "fiskheroes:ock_enable",
+          "DISABLE": "fiskheroes:ock_disable",
+          "ANCHOR": "fiskheroes:ock_climb",
+          "UNANCHOR": "fiskheroes:ock_unanchor",
+          "RELEASE": "fiskheroes:ock_unanchor",
+          "JAB_START": "fiskheroes:ock_jab",
+          "GRAB_START": "fiskheroes:ock_grab",
+          "STRIKE_START": "fiskheroes:ock_strike",
+          "STRIKE_CHARGED": "fiskheroes:ock_strike_charged"
+        }
+      },
       "fiskheroes:energy_bolt": {
         "damageProfile": {
           "damage": 9,

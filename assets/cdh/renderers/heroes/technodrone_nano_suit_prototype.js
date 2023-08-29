@@ -17,7 +17,10 @@ loadTextures({
     "cannon_inner": "cdh:technodrone_nano/technodrone_nano_cannon_inner",
     "repulsor": "fiskheroes:iron_man_repulsor",
     "repulsor_left": "fiskheroes:iron_man_repulsor_left",
-    "repulsor_boots": "fiskheroes:iron_man_repulsor_boots"
+    "repulsor_boots": "fiskheroes:iron_man_repulsor_boots",
+    "segment": "cdh:technodrone_arms",
+    "claw": "cdh:technodrone_claw",
+    "claw_lights": "cdh:technodrone_claw_light"
 });
 
 var utils = implement("fiskheroes:external/utils");
@@ -99,6 +102,28 @@ function initEffects(renderer) {
         { "offset": [-10.0, 0.5, 3.0], "size": [2.0, 2.0] },
         { "offset": [-6.5, -4.5, 3.0], "size": [2.0, 2.0] }
     ]).setParticles(renderer.createResource("PARTICLE_EMITTER", "fiskheroes:impact_charged_beam"));
+
+    var ock_arm = utils.createModel(renderer, "fiskheroes:ock_arm", "segment");
+    var ock_claw = utils.createModel(renderer, "fiskheroes:ock_claw", "claw", "claw_lights");
+    ock_claw.bindAnimation("fiskheroes:ock_claw").setData((entity, data) => {
+        var t = entity.as("TENTACLE");
+        data.load(0, 1 - Math.min(t.getCaster().getInterpolatedData("fiskheroes:tentacle_extend_timer") * 2, 1));
+        data.load(1, t.getIndex());
+        data.load(2, t.getGrabTimer());
+        data.load(3, t.getStrikeTimer());
+    });
+
+    var tentacles = renderer.bindProperty("fiskheroes:tentacles").setTentacles([
+        { "offset": [2.0, -4.5, -2.0], "direction": [13.0, 10.0, -10.0] },
+        { "offset": [-2.0, -4.5, -2.0], "direction": [-13.0, 10.0, -10.0] },
+        { "offset": [2.0, -7.5, -2.0], "direction": [13.0, -10.0, -10.0] },
+        { "offset": [-2.0, -7.5, -2.0], "direction": [-13.0, -10.0, -10.0] }
+    ]);
+    tentacles.anchor.set("body");
+    tentacles.setSegmentModel(ock_arm);
+    tentacles.setHeadModel(ock_claw);
+    tentacles.segmentLength = 1.8;
+    tentacles.segments = 16;
 }
 
 function initAnimations(renderer) {

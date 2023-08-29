@@ -17,6 +17,7 @@ function init(hero) {
     hero.addKeyBind("CHARGED_BEAM", "key.repulsorBeams", 2);
     hero.addKeyBind("BLADE", "key.blade", 3);
     hero.addKeyBind("SHIELD", "key.forcefield", 3);
+    hero.addKeyBind("TENTACLES", "key.tentacles", 4);
     hero.addKeyBind("NANITE_TRANSFORM", "key.naniteTransform", 5);
 
     hero.setModifierEnabled(isModifierEnabled);
