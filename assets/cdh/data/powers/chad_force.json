@@ -24,6 +24,24 @@
         "DISABLE": "fiskheroes:mk50_blade_disable"
       }
     },
+    "fiskheroes:lightning_cast": {
+      "damageProfile": {
+        "damage": 12.0,
+        "types": {
+          "ELECTRICITY": 1.0
+        },
+        "properties": {
+          "COOK_ENTITY": true,
+          "LIGHTNING_STRIKE": 0.15
+        }
+      },
+      "range": 48.0,
+      "chainRadius": 2.5,
+      "cooldownTime": 30,
+      "soundEvents": {
+        "SHOOT": "fiskheroes:black_lightning_lightning_cast"
+      }
+    },
     "fiskheroes:arrow_catching": {
     },
     "fiskheroes:regeneration": {

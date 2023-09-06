@@ -17,9 +17,9 @@ function init(hero) {
     hero.addAttribute("FALL_RESISTANCE", 1.0, 1);
 
     hero.addKeyBind("SONIC_WAVES", "key.canaryCry", 1);
-    hero.addKeyBind("INTANGIBILITY", "key.intangibility", 2);
-    hero.addKeyBind("AIM", "key.shadowChain", 3);
-    hero.addKeyBind("TELEKINESIS", "key.shadowChain", 3);
+    hero.addKeyBind("AIM", "key.shadowChain", 2);
+    hero.addKeyBind("TELEKINESIS", "key.shadowChain", 2);
+    hero.addKeyBind("INTANGIBILITY", "key.intangibility", 5);
 
     hero.setTickHandler((entity, manager) => {
         utils.flightOnIntangibility(entity, manager);

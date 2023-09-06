@@ -1,0 +1,140 @@
+{
+    "name": "Technodrone Velocity Armor",
+    "modifiers": {
+      "fiskheroes:transformation": {
+        "key": "NANITE_TRANSFORM",
+        "transformation": {
+          "toggleData": "fiskheroes:dyn/nanites",
+          "timerData": "fiskheroes:dyn/nanite_timer",
+          "time": 10
+        },
+        "soundEvents": {
+          "ENABLE": "fiskheroes:mk50_enable",
+          "DISABLE": "fiskheroes:mk50_disable"
+        }
+      },
+      "fiskheroes:cooldown": {
+        "cooldown": {
+          "toggleData": "fiskheroes:dyn/nanites",
+          "cooldownData": "fiskheroes:dyn/nanite_cooldown",
+          "duration": 9000,
+          "recovery": 3.0
+        },
+        "soundEvents": {
+          "TIMEOUT": "fiskheroes:mk50_disable"
+        }
+      },
+      "fiskheroes:controlled_flight": {
+        "speed": 0.1,
+        "boostSpeed": 0.23,
+        "canBoost": true,
+        "barrelRoll": {
+          "duration": 10,
+          "speed": 0.15,
+          "drag": 0.06
+        },
+        "diveSpeedRetention": 0.5,
+        "collision": {
+          "blocks": {
+            "stopFlying": false,
+            "takeDamage": true
+          },
+          "entities": {
+            "stopFlying": false,
+            "dealDamage": true
+          }
+        },
+        "knockback": 0.4,
+        "soundEvents": {
+          "ENABLE": ["fiskheroes:iron_man_flight_enable", "fiskheroes:iron_man_flight_loop"],
+          "BOOST": "fiskheroes:iron_man_boost",
+          "IMPACT_BLOCK": "fiskheroes:flight_impact_block",
+          "IMPACT_ENTITY": "fiskheroes:flight_impact_entity",
+          "ROLL": "fiskheroes:iron_man_flight_roll",
+          "DIVE": ["fiskheroes:flight_dive_loop", "fiskheroes:iron_man_flight_dive"]
+        }
+      },
+      "fiskheroes:super_speed": {
+        "canUseTreadmill": true,
+        "canUseTachyons": true,
+        "soundEvents": {
+          "ENABLE": "fiskheroes:flicker_loop_trajectory",
+          "MOVE": "fiskheroes:super_speed_move_loop_cw",
+          "SPRINT": ["fiskheroes:super_speed_sprint_trajectory1", "fiskheroes:super_speed_sprint_trajectory2"],
+          "STOP": ["fiskheroes:super_speed_stop_trajectory1", "fiskheroes:super_speed_stop_trajectory2"]
+        }
+      },
+      "fiskheroes:web_swinging": {
+        "cooldownTime": 5,
+        "soundEvents": {
+          "ENABLE": "fiskheroes:web_swinging_enable",
+          "DISABLE": "fiskheroes:web_swinging_disable",
+          "SHOOT": "fiskheroes:web_shoot_webb",
+          "RELEASE": ["fiskheroes:web_swinging_whoosh", "fiskheroes:web_swinging_fall_loop"],
+          "SWING": ["fiskheroes:web_swinging", "fiskheroes:web_stress_loop"],
+          "IMPACT": "fiskheroes:flight_impact_entity"
+        }
+      },
+      "fiskheroes:energy_bolt": {
+        "damageProfile": {
+          "damage": 9,
+          "types": {
+            "ENERGY": 1.0
+          }
+        },
+        "isExplosive": true,
+        "cooldownTime": 1,
+        "soundEvents": {
+          "SHOOT": "fiskheroes:mk50_cannon_shoot"
+        }
+      },
+      "fiskheroes:blade": {
+        "soundEvents": {
+          "ENABLE": "fiskheroes:mk50_blade_enable",
+          "DISABLE": "fiskheroes:mk50_blade_disable"
+        }
+      },
+      "fiskheroes:shield": {
+        "shield": {
+          "health": 100.0,
+          "regeneration": 10.0,
+          "recoveryDelay": 100,
+          "cooldown": 200
+        },
+        "coverage": {
+          "yawRadius": 180.0,
+          "pitchRadius": 180.0,
+          "yawOffset": 0.0,
+          "pitchOffset": 0.0
+        },
+        "knockback": 1.0,
+        "isToggle": false,
+        "soundEvents": {
+          "BLOCK_START": "fiskheroes:anti_forcefield",
+          "DEFLECT": "fiskheroes:anti_forcefield_deflect",
+          "DISARM": "fiskheroes:shield_disarm"
+        }
+      },
+      "fiskheroes:fire_immunity": {
+      },
+      "fiskheroes:projectile_immunity": {
+      },
+      "fiskheroes:water_breathing": {
+      },
+      "fiskheroes:metal_skin": {
+      },
+      "fiskheroes:regeneration": {
+        "factor": 2.0
+      },
+      "fiskheroes:speed_disintegration": {
+        "factor": 30
+      }
+    },
+    "hud": [
+      {
+        "type": "PROGRESS",
+        "texture": "fiskheroes:textures/gui/bars/nanite_transformation.png",
+        "data": "fiskheroes:dyn/nanite_cooldown"
+      }
+    ]
+  }

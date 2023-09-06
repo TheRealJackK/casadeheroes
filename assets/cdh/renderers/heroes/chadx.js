@@ -7,6 +7,7 @@ loadTextures({
     "blade": "cdh:chadx_blade"
 });
 
+var utils = implement("fiskheroes:external/utils");
 var speedster = implement("fiskheroes:external/speedster_utils");
 var capes = implement("fiskheroes:external/capes");
 
@@ -31,6 +32,11 @@ function initEffects(renderer) {
     blade.texture.set("blade");
     blade.anchor.set("rightArm");
 
+    utils.bindParticles(renderer, "fiskheroes:black_lightning").setCondition(entity => entity.getData("fiskheroes:flying"));
+    utils.bindBeam(renderer, "fiskheroes:lightning_cast", "fiskheroes:lightning_cast", "rightArm", 0xFE0648, [
+        { "firstPerson": [-8.0, 4.5, -10.0], "offset": [-0.5, 9.0, 0.0], "size": [0.75, 0.75] }
+    ]);
+
     vibration = renderer.createEffect("fiskheroes:vibration");
 
     var physics = renderer.createResource("CAPE_PHYSICS", null);
@@ -39,7 +45,7 @@ function initEffects(renderer) {
     cape = capes.createDefault(renderer, 24, "fiskheroes:cape_default.mesh.json", physics);
     cape.effect.texture.set("cape");
 
-    speedster.init(renderer, "fiskheroes:lightning_red");
+    speedster.init(renderer, "cdh:lightning_chad");
 }
 
 function render(entity, renderLayer, isFirstPersonArm) {

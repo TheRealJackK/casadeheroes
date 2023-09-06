@@ -1,5 +1,5 @@
 {
-    "name": "Yeetus Powers",
+    "name": "Yeetus-Kinesus",
     "modifiers": {
         "fiskheroes:cooldown": {
             "cooldown": {
@@ -61,7 +61,7 @@
               "projectiles": false,
               "inanimates": false
             },
-            "range": 10.0,
+            "range": 20.0,
             "soundEvents": {
               "GRAB": ["fiskheroes:shadowchain_loop", "fiskheroes:shadowchain_start"],
               "RELEASE": "fiskheroes:shadowchain_release"
