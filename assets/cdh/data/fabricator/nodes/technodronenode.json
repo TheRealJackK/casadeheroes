@@ -1,0 +1,12 @@
+{
+    "display": {
+        "name": {
+            "translate": "Technodrone Suits"
+        },
+        "icon": {
+            "texture": "cdh:textures/gui/nodes/technodrone.png"
+        }
+    },
+    "requirements": [],
+    "price": {}
+}

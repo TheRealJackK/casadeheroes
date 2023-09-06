@@ -1,6 +1,6 @@
 {
     "suit": "cdh:technodrone_velocity_suit",
     "requirements": [
-        "cdh:casadeheroesnode"
+        "cdh:technodronenode"
     ]
 }

@@ -1,0 +1,6 @@
+{
+    "suit": "cdh:camman_battle_damaged",
+    "requirements": [
+        "cdh:casadeheroesnode"
+    ]
+}

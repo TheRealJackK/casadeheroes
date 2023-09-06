@@ -1,6 +1,7 @@
 {
     "suit": "cdh:technodrone",
     "requirements": [
-        "cdh:casadeheroesnode"
+        "cdh:casadeheroesnode",
+        "cdh:technodronenode"
     ]
 }

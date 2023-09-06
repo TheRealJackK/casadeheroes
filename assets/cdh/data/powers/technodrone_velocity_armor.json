@@ -125,9 +125,6 @@
       },
       "fiskheroes:regeneration": {
         "factor": 2.0
-      },
-      "fiskheroes:speed_disintegration": {
-        "factor": 30
       }
     },
     "hud": [
