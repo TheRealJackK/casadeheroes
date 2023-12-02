@@ -1,12 +1,12 @@
 var landing = implement("fiskheroes:external/superhero_landing");
 
 function init(hero) {
-    hero.setName("Technodrone Nano Suit");
+    hero.setName("Technodrone Battle Damaged");
     hero.setTier(8);
 
     hero.setChestplate("Suit Housing");
 
-    hero.addPowers("cdh:technodrone_nano_armor");
+    hero.addPowers("cdh:technodrone_battle_damaged");
     hero.addAttribute("PUNCH_DAMAGE", 8.5, 0);
     hero.addAttribute("WEAPON_DAMAGE", 1.5, 0);
     hero.addAttribute("SPRINT_SPEED", 0.1, 1);
@@ -17,7 +17,7 @@ function init(hero) {
     hero.addKeyBind("CHARGED_BEAM", "key.repulsorBeams", 2);
     hero.addKeyBind("BLADE", "key.blade", 3);
     hero.addKeyBind("SHIELD", "key.forcefield", 3);
-    // hero.addKeyBind("TENTACLES", "key.tentacles", 4);
+    hero.addKeyBind("TENTACLES", "key.tentacles", 4);
     hero.addKeyBind("NANITE_TRANSFORM", "key.naniteTransform", 5);
 
     hero.setModifierEnabled(isModifierEnabled);

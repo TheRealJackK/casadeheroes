@@ -1,23 +1,25 @@
 var landing = implement("fiskheroes:external/superhero_landing");
+var speedster_base = implement("fiskheroes:external/speedster_base");
 
 function init(hero) {
-    hero.setName("Technodrone Nano Suit");
-    hero.setTier(8);
+    hero.setName("Chad X Quantum Armor");
+    hero.setTier(7);
 
     hero.setChestplate("Suit Housing");
 
-    hero.addPowers("cdh:technodrone_nano_armor");
+    hero.addPowers("cdh:technodrone_quantum_armor", "cdh:chad_force");
     hero.addAttribute("PUNCH_DAMAGE", 8.5, 0);
     hero.addAttribute("WEAPON_DAMAGE", 1.5, 0);
     hero.addAttribute("SPRINT_SPEED", 0.1, 1);
     hero.addAttribute("JUMP_HEIGHT", 0.5, 0);
     hero.addAttribute("FALL_RESISTANCE", 8.0, 0);
+    hero.addAttribute("BASE_SPEED_LEVELS", 4.0, 0);
 
     hero.addKeyBind("AIM", "key.crabCannon", 1);
-    hero.addKeyBind("CHARGED_BEAM", "key.repulsorBeams", 2);
+    hero.addKeyBind("SIZE_MANIPULATION", "key.sizeManipulation", 2);
     hero.addKeyBind("BLADE", "key.blade", 3);
     hero.addKeyBind("SHIELD", "key.forcefield", 3);
-    // hero.addKeyBind("TENTACLES", "key.tentacles", 4);
+    hero.addKeyBind("SUPER_SPEED", "key.superSpeed", 4);
     hero.addKeyBind("NANITE_TRANSFORM", "key.naniteTransform", 5);
 
     hero.setModifierEnabled(isModifierEnabled);
@@ -53,7 +55,21 @@ function init(hero) {
         manager.incrementData(entity, "fiskheroes:dyn/booster_l_timer", 2, flying && !item.doesNeedTwoHands());
 
         landing.tick(entity, manager);
+
+        speedster_base.tick(entity, manager);
     });
+}
+
+function webSwingingKey(player, manager) {
+    var flag = player.getData("fiskheroes:web_swinging");
+
+    if (!flag) {
+        manager.setDataWithNotify(player, "fiskheroes:prev_utility_belt_type", player.getData("fiskheroes:utility_belt_type"));
+        manager.setDataWithNotify(player, "fiskheroes:utility_belt_type", -1);
+    }
+
+    manager.setDataWithNotify(player, "fiskheroes:web_swinging", !flag);
+    return true;
 }
 
 function shieldProfile(profile) {

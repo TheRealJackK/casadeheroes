@@ -1,5 +1,5 @@
 function init(hero) {
-    hero.setName("CamMan");
+    hero.setName("CamMan (Battle Damaged)");
     hero.setTier(5);
 
     hero.setHelmet("item.superhero_armor.piece.cowl");

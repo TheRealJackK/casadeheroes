@@ -8,10 +8,13 @@ loadTextures({
 var utils = implement("fiskheroes:external/utils");
 var wing_utils = implement("fiskheroes:external/wing_utils");
 var falcon_boosters = implement("fiskheroes:external/falcon_boosters");
-
 var wings;
+var chest;
 
 function initEffects(renderer) {
+    chest = renderer.createEffect("fiskheroes:chest");
+    chest.setExtrude(1).setYOffset(1);
+
     wings = wing_utils.create(renderer, "wings", null, wing_utils.PRESET_CONTROLLED_FLIGHT);
 
     var color = 0x66FF47;
@@ -56,5 +59,6 @@ function getFlightAnimation() {
 function render(entity, renderLayer, isFirstPersonArm) {
     if (renderLayer == "CHESTPLATE") {
         wings.render(entity, entity.getInterpolatedData("fiskheroes:shield_blocking_timer"));
+        chest.render();
     }
 }

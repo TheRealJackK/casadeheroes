@@ -1,35 +1,34 @@
 extend("fiskheroes:hero_basic");
 loadTextures({
-    "base": "cdh:technodrone_nano/velocity/technodrone_velocity_suit",
-    "suit": "cdh:technodrone_nano/velocity/technodrone_velocity_suit.tx.json",
-    "mask": "cdh:technodrone_nano/velocity/technodrone_velocity_mask.tx.json",
-    "mask_lights": "cdh:technodrone_nano/velocity/technodrone_velocity_suit_mask_lights",
-    "lights": "cdh:technodrone_nano/velocity/technodrone_velocity_suit_lights",
-    "reactor": "cdh:technodrone_nano/velocity/technodrone_velocity_reactor",
-    "reactor_lights": "cdh:technodrone_nano/velocity/technodrone_velocity_reactor_lights",
-    "blade": "cdh:technodrone_nano/velocity/technodrone_velocity_blade",
+    "base": "cdh:pixie_quantum_suit",
+    "suit": "cdh:technodrone_nano/quantum/technodrone_nano_suit_quantum.tx.json",
+    "mask": "cdh:technodrone_nano/quantum/technodrone_nano_mask_quantum.tx.json",
+    "mask_lights": "cdh:technodrone_nano/quantum/technodrone_nano_suit_mask_quantum_lights",
+    "lights": "cdh:technodrone_nano/quantum/technodrone_nano_suit_quantum_lights",
+    "reactor": "cdh:technodrone_nano/technodrone_nano_reactor",
+    "reactor_lights": "cdh:technodrone_nano/technodrone_nano_reactor_lights",
+    "blade": "cdh:technodrone_nano/technodrone_nano_blade",
     "blade_lights": "cdh:technodrone_nano/technodrone_nano_blade_lights",
     "backpack": "cdh:technodrone_nano/technodrone_nano_suit_backpack",
-    "cannon1": "cdh:technodrone_nano/velocity/technodrone_velocity_cannon1",
-    "cannon2": "cdh:technodrone_nano/velocity/technodrone_velocity_cannon2",
+    "cannon1": "cdh:technodrone_nano/technodrone_nano_cannon1",
+    "cannon2": "cdh:technodrone_nano/technodrone_nano_cannon2",
     "cannon1_lights": "cdh:technodrone_nano/technodrone_nano_cannon1_lights",
     "cannon2_lights": "cdh:technodrone_nano/technodrone_nano_cannon2_lights",
     "cannon_inner": "cdh:technodrone_nano/technodrone_nano_cannon_inner",
     "repulsor": "fiskheroes:iron_man_repulsor",
     "repulsor_left": "fiskheroes:iron_man_repulsor_left",
     "repulsor_boots": "fiskheroes:iron_man_repulsor_boots",
-    "web_small": "cdh:technodrone_nano/velocity/velocity_web",
-	"web_large": "cdh:technodrone_nano/velocity/velocity_web_24",
-	"web_rope": "cdh:technodrone_nano/velocity/velocity_web_rope",
-	"web_rope_base": "cdh:technodrone_nano/velocity/velocity_web"
+    "segment": "cdh:technodrone_arms",
+    "claw": "cdh:technodrone_claw",
+    "claw_lights": "cdh:technodrone_claw_light"
 });
 
 var utils = implement("fiskheroes:external/utils");
-var speedster = implement("fiskheroes:external/speedster_utils");
 var mk50_cannon = implement("fiskheroes:external/mk50_cannon");
 var mk85_backpack = implement("fiskheroes:external/mk85_backpack");
 var iron_man_boosters = implement("fiskheroes:external/iron_man_boosters");
 
+var chest;
 var backpack;
 var cannon;
 var boosters;
@@ -62,8 +61,9 @@ function init(renderer) {
 }
 
 function initEffects(renderer) {
-    speedster.init(renderer, "cdh:lightning_technodrone");
-    
+    chest = renderer.createEffect("fiskheroes:chest");
+    chest.setExtrude(1).setYOffset(1);
+
     repulsor = renderer.createEffect("fiskheroes:overlay");
 
     blade = renderer.createEffect("fiskheroes:shield");
@@ -80,9 +80,9 @@ function initEffects(renderer) {
         return true;
     });
 
-    cannon = mk50_cannon.create(renderer, "rightArm", 0xDC4153);
+    cannon = mk50_cannon.create(renderer, "rightArm", 0x66FF47);
     backpack = mk85_backpack.create(renderer, "backpack");
-    boosters = iron_man_boosters.create(renderer, "fiskheroes:repulsor_layer_%s", true);
+    boosters = iron_man_boosters.create(renderer, "fiskheroes:red_fire_layer_%s", true);
 
     metal_heat = renderer.createEffect("fiskheroes:metal_heat");
     metal_heat.includeEffects(blade, cannon.c1, cannon.c2, backpack.b1, backpack.b2, backpack.b3);
@@ -107,11 +107,27 @@ function initEffects(renderer) {
         { "offset": [-6.5, -4.5, 3.0], "size": [2.0, 2.0] }
     ]).setParticles(renderer.createResource("PARTICLE_EMITTER", "fiskheroes:impact_charged_beam"));
 
-    var webs = renderer.bindProperty("fiskheroes:webs");
-	webs.textureSmall.set("web_small");
-	webs.textureLarge.set("web_large");
-	webs.textureRope.set("web_rope");
-	webs.textureRopeBase.set("web_rope_base");
+    var ock_arm = utils.createModel(renderer, "fiskheroes:ock_arm", "segment");
+    var ock_claw = utils.createModel(renderer, "fiskheroes:ock_claw", "claw", "claw_lights");
+    ock_claw.bindAnimation("fiskheroes:ock_claw").setData((entity, data) => {
+        var t = entity.as("TENTACLE");
+        data.load(0, 1 - Math.min(t.getCaster().getInterpolatedData("fiskheroes:tentacle_extend_timer") * 2, 1));
+        data.load(1, t.getIndex());
+        data.load(2, t.getGrabTimer());
+        data.load(3, t.getStrikeTimer());
+    });
+
+    var tentacles = renderer.bindProperty("fiskheroes:tentacles").setTentacles([
+        { "offset": [2.0, -4.5, -2.0], "direction": [13.0, 10.0, -10.0] },
+        { "offset": [-2.0, -4.5, -2.0], "direction": [-13.0, 10.0, -10.0] },
+        { "offset": [2.0, -7.5, -2.0], "direction": [13.0, -10.0, -10.0] },
+        { "offset": [-2.0, -7.5, -2.0], "direction": [-13.0, -10.0, -10.0] }
+    ]);
+    tentacles.anchor.set("body");
+    tentacles.setSegmentModel(ock_arm);
+    tentacles.setHeadModel(ock_claw);
+    tentacles.segmentLength = 1.8;
+    tentacles.segments = 16;
 }
 
 function initAnimations(renderer) {
@@ -151,4 +167,6 @@ function render(entity, renderLayer, isFirstPersonArm) {
 
     metal_heat.opacity = entity.getInterpolatedData("fiskheroes:metal_heat");
     metal_heat.render();
+
+    chest.render();
 }

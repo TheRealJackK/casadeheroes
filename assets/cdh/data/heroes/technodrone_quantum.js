@@ -1,12 +1,12 @@
 var landing = implement("fiskheroes:external/superhero_landing");
 
 function init(hero) {
-    hero.setName("Technodrone Nano Suit");
-    hero.setTier(8);
+    hero.setName("Technodrone Quantum Suit");
+    hero.setTier(7);
 
     hero.setChestplate("Suit Housing");
 
-    hero.addPowers("cdh:technodrone_nano_armor");
+    hero.addPowers("cdh:technodrone_quantum_armor");
     hero.addAttribute("PUNCH_DAMAGE", 8.5, 0);
     hero.addAttribute("WEAPON_DAMAGE", 1.5, 0);
     hero.addAttribute("SPRINT_SPEED", 0.1, 1);
@@ -14,10 +14,9 @@ function init(hero) {
     hero.addAttribute("FALL_RESISTANCE", 8.0, 0);
 
     hero.addKeyBind("AIM", "key.crabCannon", 1);
-    hero.addKeyBind("CHARGED_BEAM", "key.repulsorBeams", 2);
+    hero.addKeyBind("SIZE_MANIPULATION", "key.sizeManipulation", 2);
     hero.addKeyBind("BLADE", "key.blade", 3);
     hero.addKeyBind("SHIELD", "key.forcefield", 3);
-    // hero.addKeyBind("TENTACLES", "key.tentacles", 4);
     hero.addKeyBind("NANITE_TRANSFORM", "key.naniteTransform", 5);
 
     hero.setModifierEnabled(isModifierEnabled);
@@ -54,6 +53,13 @@ function init(hero) {
 
         landing.tick(entity, manager);
     });
+}
+
+function giantModeKey(player, manager) {
+    var flag = player.getData("fiskheroes:dyn/giant_mode");
+    manager.setData(player, "fiskheroes:dyn/giant_mode", !flag);
+    manager.setData(player, "fiskheroes:size_state", flag ? -1 : 1);
+    return true;
 }
 
 function shieldProfile(profile) {
@@ -126,6 +132,10 @@ function isKeyBindEnabled(entity, keyBind) {
         default:
             return true;
     }
+}
+
+function getAttributeProfile(entity) {
+    return entity.getData("fiskheroes:dyn/giant_mode_timer") > 0 ? "GIANT_MODE" : null;
 }
 
 function hasProperty(entity, property) {

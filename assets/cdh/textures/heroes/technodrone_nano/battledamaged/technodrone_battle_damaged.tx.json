@@ -1,0 +1,22 @@
+{
+  "texture": {
+    "in": "cdh:technodrone_nano/battledamaged/technodrone_battle_damaged",
+    "transform": [
+      {
+        "operation": "XOR",
+        "supply": "fiskheroes:xor/iron_man_mk50_suit_<TIMER>"
+      }
+    ],
+    "out": "cdh:technodrone_nano/battledamaged/technodrone_battle_damaged_<TIMER>"
+  },
+  "getters": {
+    "TIMER": {
+      "key": "Math.ceil(24 * entity.getInterpolatedData('fiskheroes:dyn/nanite_timer')) | 0",
+      "values": {
+        "min": 1,
+        "max": 24
+      }
+    }
+  },
+  "isDynamic": true
+}

@@ -1,5 +1,5 @@
 {
-    "name": "Technodrone Velocity Armor",
+    "name": "Technodrone Nanotech Armor",
     "modifiers": {
       "fiskheroes:transformation": {
         "key": "NANITE_TRANSFORM",
@@ -26,7 +26,7 @@
       },
       "fiskheroes:controlled_flight": {
         "speed": 0.1,
-        "boostSpeed": 0.28,
+        "boostSpeed": 0.23,
         "canBoost": true,
         "barrelRoll": {
           "duration": 10,
@@ -54,25 +54,13 @@
           "DIVE": ["fiskheroes:flight_dive_loop", "fiskheroes:iron_man_flight_dive"]
         }
       },
-      "fiskheroes:super_speed": {
-        "canUseTreadmill": true,
-        "canUseTachyons": true,
+      "fiskheroes:size_manipulation|small": {
+        "isInstant": true,
+        "minSize": 0.0625,
+        "maxSize": 1.0,
         "soundEvents": {
-          "ENABLE": "fiskheroes:flicker_loop_trajectory",
-          "MOVE": "fiskheroes:super_speed_move_loop_cw",
-          "SPRINT": ["fiskheroes:super_speed_sprint_trajectory1", "fiskheroes:super_speed_sprint_trajectory2"],
-          "STOP": ["fiskheroes:super_speed_stop_trajectory1", "fiskheroes:super_speed_stop_trajectory2"]
-        }
-      },
-      "fiskheroes:web_swinging": {
-        "cooldownTime": 5,
-        "soundEvents": {
-          "ENABLE": "fiskheroes:web_swinging_enable",
-          "DISABLE": "fiskheroes:web_swinging_disable",
-          "SHOOT": "fiskheroes:web_shoot_webb",
-          "RELEASE": ["fiskheroes:web_swinging_whoosh", "fiskheroes:web_swinging_fall_loop"],
-          "SWING": ["fiskheroes:web_swinging", "fiskheroes:web_stress_loop"],
-          "IMPACT": "fiskheroes:flight_impact_entity"
+          "SHRINK": "fiskheroes:pym_shrink",
+          "GROW": "fiskheroes:pym_grow"
         }
       },
       "fiskheroes:energy_bolt": {
@@ -83,9 +71,34 @@
           }
         },
         "isExplosive": true,
-        "cooldownTime": 1,
+        "cooldownTime": 10,
         "soundEvents": {
           "SHOOT": "fiskheroes:mk50_cannon_shoot"
+        }
+      },
+      "fiskheroes:charged_beam": {
+        "damageProfile": {
+          "damage": 7.0,
+          "types": {
+            "ENERGY": 1.0,
+            "FIRE": 0.25
+          },
+          "properties": {
+            "COOK_ENTITY": true,
+            "HEAT_TRANSFER": 20
+          }
+        },
+        "isExplosive": true,
+        "chargeTime": 20,
+        "duration": 40,
+        "cooldownTime": 40,
+        "range": 32.0,
+        "radius": 0.6,
+        "soundEvents": {
+          "SHOOT": "fiskheroes:mk85_beam_start",
+          "SHOOT_STOP": "fiskheroes:mk85_beam_stop",
+          "BEAM_AMBIENT": "fiskheroes:mk85_beam_loop",
+          "CHARGE": "fiskheroes:mk85_beam_charge"
         }
       },
       "fiskheroes:blade": {

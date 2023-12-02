@@ -8,10 +8,14 @@ loadTextures({
 var utils = implement("fiskheroes:external/utils");
 var capes = implement("fiskheroes:external/capes");
 
+var chest;
 var cape;
 var overlay;
 
 function initEffects(renderer) {
+    chest = renderer.createEffect("fiskheroes:chest");
+    chest.setExtrude(1).setYOffset(1);
+    
     var physics = renderer.createResource("CAPE_PHYSICS", null);
     physics.weight = 0.9;
     physics.maxFlare = 0.5;
@@ -38,5 +42,6 @@ function initAnimations(renderer) {
 function render(entity, renderLayer, isFirstPersonArm) {
     if (!isFirstPersonArm && renderLayer == "CHESTPLATE") {
         cape.render(entity);
+        chest.render();
     }
 }
