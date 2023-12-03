@@ -15,11 +15,11 @@ function init(hero) {
     hero.addAttribute("FALL_RESISTANCE", 8.0, 0);
     hero.addAttribute("BASE_SPEED_LEVELS", 4.0, 0);
 
-    hero.addKeyBind("AIM", "key.crabCannon", 1);
+    hero.addKeyBind("AIM", "Repulsor Repeater", 1);
     hero.addKeyBind("SUPER_SPEED", "key.superSpeed", 2);
     hero.addKeyBind("BLADE", "key.blade", 3);
     hero.addKeyBind("SHIELD", "key.forcefield", 3);
-    hero.addKeyBindFunc("func_WEB_SWINGING", webSwingingKey, "key.webSwinging", 4);
+    hero.addKeyBindFunc("func_WEB_SWINGING", webSwingingKey, "Grapple Hook", 4);
     hero.addKeyBind("NANITE_TRANSFORM", "key.naniteTransform", 5);
 
     hero.setModifierEnabled(isModifierEnabled);

@@ -19,7 +19,7 @@ function init(hero) {
 
     hero.addKeyBind("SUPER_SPEED", "key.superSpeed", 1);
     hero.addKeyBind("SLOW_MOTION", "key.slowMotion", 2);
-    hero.addKeyBind("BLADE", "key.blade", 3);
+    hero.addKeyBind("BLADE", "Machete", 3);
 
     hero.addAttributeProfile("BLADE", bladeProfile);
     hero.setAttributeProfile(getProfile);

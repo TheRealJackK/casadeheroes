@@ -39,7 +39,7 @@
         },
         "properties": {
           "ADD_KNOCKBACK": 1.0,
-          "HIT_COOLDOWN": 0.0
+          "HIT_COOLDOWN": 10
         }
       },
       "range": 48.0,

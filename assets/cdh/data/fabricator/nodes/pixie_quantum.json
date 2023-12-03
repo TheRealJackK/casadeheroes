@@ -1,0 +1,6 @@
+{
+    "suit": "cdh:pixie_quantum",
+    "requirements": [
+        "cdh:technodronenode"
+    ]
+}

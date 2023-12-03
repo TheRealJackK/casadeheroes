@@ -1,0 +1,6 @@
+{
+    "suit": "cdh:ambush_quantum",
+    "requirements": [
+        "cdh:technodronenode"
+    ]
+}

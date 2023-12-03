@@ -2,7 +2,7 @@ var landing = implement("fiskheroes:external/superhero_landing");
 var speedster_base = implement("fiskheroes:external/speedster_base");
 
 function init(hero) {
-    hero.setName("Chad X Quantum Armor");
+    hero.setName("Chad X Quantum Suit");
     hero.setTier(7);
 
     hero.setChestplate("Suit Housing");

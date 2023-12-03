@@ -13,7 +13,7 @@ function init(hero) {
     hero.addAttribute("JUMP_HEIGHT", 0.5, 0);
     hero.addAttribute("FALL_RESISTANCE", 8.0, 0);
 
-    hero.addKeyBind("AIM", "key.crabCannon", 1);
+    hero.addKeyBind("AIM", "Repulsor Repeater", 1);
     hero.addKeyBind("CHARGED_BEAM", "key.repulsorBeams", 2);
     hero.addKeyBind("BLADE", "key.blade", 3);
     hero.addKeyBind("SHIELD", "key.forcefield", 3);

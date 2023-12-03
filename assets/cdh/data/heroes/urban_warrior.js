@@ -17,9 +17,9 @@ function init(hero) {
 
     hero.addKeyBind("AIM", "key.aim", -1);
     hero.addKeyBind("GUN_RELOAD", "key.reload", 1);
-    hero.addKeyBind("WEB_ZIP", "key.webZip", 2);
+    hero.addKeyBind("WEB_ZIP", "Grapple Zip", 2);
     hero.addKeyBind("UTILITY_BELT", "key.grenades", 3);
-    hero.addKeyBindFunc("func_WEB_WINGS", webWingsKey, "key.webWings", 5);
+    hero.addKeyBindFunc("func_WEB_WINGS", webWingsKey, "Gliding Suit", 5);
     
     hero.setKeyBindEnabled(isKeyBindEnabled);
     hero.setHasPermission((entity, permission) => permission == "USE_GUN");

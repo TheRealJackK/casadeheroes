@@ -8,7 +8,7 @@ function init(hero) {
     hero.setLeggings("Pants");
     hero.setBoots("Boots");
 
-    hero.addPowers("fiskheroes:spider_physiology", "fiskheroes:web_shooters");
+    hero.addPowers("fiskheroes:spider_physiology", "fiskheroes:web_shooters", "fiskheroes:canary_cry", "fiskheroes:invisibility");
     hero.addAttribute("FALL_RESISTANCE", 13.0, 0);
     hero.addAttribute("JUMP_HEIGHT", 2.5, 0);
     hero.addAttribute("PUNCH_DAMAGE", 7.5, 0);
@@ -19,7 +19,8 @@ function init(hero) {
     hero.addKeyBind("UTILITY_BELT", "key.webShooters", 1);
     hero.addKeyBind("WEB_ZIP", "key.webZip", 2);
     hero.addKeyBindFunc("func_WEB_SWINGING", webSwingingKey, "key.webSwinging", 3);
-    hero.addKeyBind("SLOW_MOTION", "key.slowMotionHold", 4);
+    hero.addKeyBind("INVISIBILITY", "Activate Cloaking", 4);
+    hero.addKeyBind("SONIC_WAVES", "Activate Sonics", 5);
 
     hero.setModifierEnabled(isModifierEnabled);
     hero.setKeyBindEnabled(isKeyBindEnabled);

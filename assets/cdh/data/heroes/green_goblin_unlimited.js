@@ -11,7 +11,7 @@ function init(hero) {
     hero.setLeggings("item.superhero_armor.piece.pants");
     hero.setBoots("item.superhero_armor.piece.boots");
 
-    hero.addPowers("fiskheroes:exo7_flightpack");
+    hero.addPowers("fiskheroes:exo7_flightpack", "fiskheroes:grenades");
     hero.addAttribute("PUNCH_DAMAGE", 5.5, 0);
     hero.addAttribute("WEAPON_DAMAGE", 3.0, 0);
     hero.addAttribute("JUMP_HEIGHT", 1.0, 0);
@@ -22,6 +22,7 @@ function init(hero) {
     hero.addKeyBind("AIM", "key.aim", -1);
     hero.addKeyBind("SHIELD", "key.wingShield", 1);
     hero.addKeyBind("GUN_RELOAD", "key.reload", 1);
+    hero.addKeyBind("UTILITY_BELT", "key.grenades", 2);
 
     hero.setModifierEnabled(isModifierEnabled);
     hero.setKeyBindEnabled(isKeyBindEnabled);

@@ -98,7 +98,7 @@ function initEffects(renderer) {
     renderer.bindProperty("fiskheroes:energy_bolt").color.set(0xDC4153);
 
     utils.bindParticles(renderer, "fiskheroes:iron_man").setCondition(entity => entity.getData("fiskheroes:flying"));
-    utils.bindBeam(renderer, "fiskheroes:charged_beam", "fiskheroes:charged_beam", "body", 0xDC4153, [
+    utils.bindBeam(renderer, "fiskheroes:charged_beam", "fiskheroes:charged_beam", "body", 0x66FF47, [
         { "offset": [6.75, 10.0, 3.0], "size": [2.0, 2.0] },
         { "offset": [10.0, 0.5, 3.0], "size": [2.0, 2.0] },
         { "offset": [6.5, -4.5, 3.0], "size": [2.0, 2.0] },

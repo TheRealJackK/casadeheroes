@@ -1,0 +1,6 @@
+{
+    "suit": "cdh:technodrone_quantum",
+    "requirements": [
+        "cdh:technodronenode"
+    ]
+}

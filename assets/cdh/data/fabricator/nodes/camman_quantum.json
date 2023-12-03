@@ -1,0 +1,6 @@
+{
+    "suit": "cdh:camman_quantum",
+    "requirements": [
+        "cdh:technodronenode"
+    ]
+}

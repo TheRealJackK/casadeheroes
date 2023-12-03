@@ -17,7 +17,7 @@ function init(hero) {
     hero.addAttribute("SPRINT_SPEED", 0.1, 1);
     hero.addAttribute("IMPACT_DAMAGE", 0.3, 1);
 
-    hero.addKeyBind("CHARGED_BEAM", "key.chargedBeam", 1);
+    hero.addKeyBind("CHARGED_BEAM", "Energy Blast", 1);
     hero.addKeyBind("SHIELD", "key.wingShield", 2);
 
     hero.setModifierEnabled(isModifierEnabled);

@@ -16,8 +16,8 @@ function init(hero) {
     hero.addAttribute("IMPACT_DAMAGE", 0.5, 1);
 
     hero.addKeyBind("UTILITY_BELT", "key.utilityBelt", 1);
-    hero.addKeyBind("WEB_ZIP", "key.webZip", 2);
-    hero.addKeyBindFunc("func_WEB_SWINGING", webSwingingKey, "key.webSwinging", 3);
+    hero.addKeyBind("WEB_ZIP", "Grabble Zip", 2);
+    hero.addKeyBindFunc("func_WEB_SWINGING", webSwingingKey, "Grapple Hook", 3);
 
 }
 

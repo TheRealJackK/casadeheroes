@@ -14,9 +14,10 @@ function init(hero) {
     hero.addAttribute("FALL_RESISTANCE", 8.0, 0);
 
     hero.addKeyBind("AIM", "key.crabCannon", 1);
-    hero.addKeyBind("SIZE_MANIPULATION", "key.sizeManipulation", 2);
+    hero.addKeyBind("CHARGED_BEAM", "Channeled Energy Blast", 2);
     hero.addKeyBind("BLADE", "key.blade", 3);
     hero.addKeyBind("SHIELD", "key.forcefield", 3);
+    hero.addKeyBind("SIZE_MANIPULATION", "key.sizeManipulation", 4);
     hero.addKeyBind("NANITE_TRANSFORM", "key.naniteTransform", 5);
 
     hero.setModifierEnabled(isModifierEnabled);

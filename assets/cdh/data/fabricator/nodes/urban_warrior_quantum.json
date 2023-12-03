@@ -1,0 +1,6 @@
+{
+    "suit": "cdh:urban_warrior_quantum",
+    "requirements": [
+        "cdh:technodronenode"
+    ]
+}
